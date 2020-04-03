@@ -1,0 +1,21 @@
+server:
+  tomcat:
+    max-threads: 200
+    uri-encoding: UTF-8
+    #存放Tomcat的日志、Dump等文件的临时文件夹，默认为系统的tmp文件夹（如：C:\Users\Shanhy\AppData\Local\Temp）
+    basedir: /data/tomcat8-application/${spring.application.name}/
+    max-http-post-size: 10485760
+    #打开Tomcat的Access日志，并可以设置日志格式的方法：
+    accesslog:
+      enabled: true
+      pattern: common
+    #accesslog目录，默认在basedir/logs
+      directory: logs
+
+  
+  
+feign:
+  client:
+    config:
+      default:
+       loggerLevel: FULL
